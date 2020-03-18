@@ -7,9 +7,26 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+
+
+    <!-- navbar -->
+    <%= render 'layouts/navbar'%>
+
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+         <%= render 'layouts/sidebar'%>
+        </div><!-- /.col-md-3 -->
+
+        <div class="col-md-9">
+          <%= yield%>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

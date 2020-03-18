@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+body {
+	padding-top: 70px;
+	background: #eee;
+}
+
+.navbar {
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+.navbar .navbar-brand {
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 20px;
+	color: #dd5638;
+}
+
+.navbar-right {
+	margin-right: 0;
+}
+
+.table tbody>tr>td.middle {
+	vertical-align: middle;
+}
+
+.media {
+	padding: 10px 0;
+}
+
+.media img, .fileinput .thumbnail, .thumbnail img {
+	border-radius: 50%;
+}
+
+.media-left {
+	padding: 0 20px;
+}
+
+.media-heading {
+	color: #dd5638;
+	margin-bottom: 10px;
+}
+
+.media-body {
+	padding-top: 15px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
