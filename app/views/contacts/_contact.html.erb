@@ -1,30 +1,28 @@
-<% @contacts.each do |contact| %>
-     <tr>
-     <td class="middle">
-       <div class="media">
-         <div class="media-left">
-                 <a href="#">
-                    <%= image_tag contact.gravatar, class: "media-object"%>
-                 </a>
-         </div>
-         <div class="media-body">
-               <h4 class="media-heading"><%= contact.name %></h4>
-                 <address>
-                   <strong><%= contact.company %></strong><br>
-                   <%= contact.email %>
-                 </address>
-              </div>
-        </div>
-     </td>
-         <td width="100" class="middle">
-              <div>
-                  <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit">
-                    <i class="glyphicon glyphicon-edit"></i>
-                  </a>
-                  <a href="#" class="btn btn-circle btn-danger btn-xs" title="Remove">
-                    <i class="glyphicon glyphicon-remove"></i>
-                  </a>
-             </div>
-        </td>
-   </tr>         
-<% end %>  
+<tr>
+  <td class="middle">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">          
+          <%= image_tag contact.gravatar, class: "media-object" %>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= contact.name %></h4>
+        <address>
+          <strong><%= contact.company %></strong><br>
+          <%= contact.email %>
+        </address>
+      </div>
+    </div>
+  </td>
+  <td width="100" class="middle">
+    <div>
+      <a href="#" class="btn btn-circle btn-default btn-xs" title="Edit">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a href="#" class="btn btn-circle btn-danger btn-xs" title="Edit">
+        <i class="glyphicon glyphicon-remove"></i>
+      </a>
+    </div>
+  </td>
+</tr>

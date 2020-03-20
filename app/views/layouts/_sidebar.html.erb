@@ -1,6 +1,13 @@
  <div class="list-group">
-            <a href="#" class="list-group-item active">All Contact <span class="badge">10</span></a>
-            <a href="" class="list-group-item">Family <span class="badge">4</span></a>
-            <a href="" class="list-group-item">Friends <span class="badge">3</span></a>
-            <a href="" class="list-group-item">Other <span class="badge">3</span></a>
+            <% active = params[:group_id] == nil || params[:group_id].empty? ? 'active' : '' %>
+                <%= link_to  contacts_path, class: "list-group-item #{active}" do %>
+                All Contact <span class="badge"><%= Contact.count %></span>
+            <% end %>
+      
+            <% Group.all.each do |group| %>
+                <% active = params[:group_id].to_i == group.id ? 'active' : '' %>
+                    <%= link_to contacts_path(group_id: group.id), class: "list-group-item #{active}" do %>
+                    <%= group.name %><span class="badge"><%= group.contacts.count  %></span>
+                <% end %>
+            <% end %>
 </div>

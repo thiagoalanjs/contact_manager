@@ -3,16 +3,13 @@
         <strong>Record not found</strong>
     </div>
 <% end %>
-<div class="panel panel-default">
-    <table class="table">
-    <%= render @contacts %>
-    </table>            
- </div>         
 
- <div class="text-center">
-    <nav>
-      <ul class="pagination">
-      <%= paginate @contacts %>
-      </ul>
-    </nav>
+<div class="panel panel-default">
+  <table class="table">
+      <%= render @contacts %>
+  </table>
+</div>
+
+<div class="text-center">
+  <%= paginate @contacts %>
 </div>
