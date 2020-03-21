@@ -10,12 +10,16 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-danger">
-                            <h3>Please correct this following errors:</h3>
-
-                            <ul>
-                            </ul>
-                        </div>
+                      <% if @contact.errors.any? %>
+                          <div class="alert alert-danger">
+                             <h3>Please correct this following errors:</h3>
+                              <ul>
+                                    <% @contact.errors.full_messages.each do |message| %>
+                                         <li><%= message %></li>
+                                     <% end %>
+                              </ul>
+                          </div>
+                      <% end %>
                     </div>
                 </div>
             
@@ -63,7 +67,7 @@
                     <select name="contact[group_id]" id="group" class="form-control">
                       <option value="">Select group</option>
                       <%= Group.all.each do |group| %>
-                        <option value="<%= group.id %>"><%= group.name %></option>
+                            <option value="<%= group.id %>"><%= group.name %></option>
                       <% end %>  
                     </select>
                   </div>
