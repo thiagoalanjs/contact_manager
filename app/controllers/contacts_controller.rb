@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   
   def index
     if params[:group_id] && !params[:group_id].empty?
-        #@contacts = Contact.where(group_id: params[:group_id]).page(params[:page])
+       #@contacts = Contact.where(group_id: params[:group_id]).page(params[:page])
        @contacts = Group.find(params[:group_id]).contacts.page(params[:page])   
     else
        @contacts = Contact.order(created_at: :desc).page(params[:page])
@@ -24,9 +24,19 @@ class ContactsController < ApplicationController
   end
 
   def edit
-      @contact = Contact.find(params[:id])
+    @contact = Contact.find(params[:id])
   end
 
+  def update
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      flash[:success] = "Contact was successfully updated."
+      redirect_to contacts_path
+    else 
+      render 'edit'
+    end
+  end
+  
   private
 
   def contact_params  
