@@ -60,7 +60,9 @@
             <div class="form-group">
               <%= f.label :group_id, class: "control-label col-md-3" %>
               <div class="col-md-5">
-                <%= f.collection_select :group_id, Group.all, :id, :name, { prompt: "Select Group" }, class: "form-control" %>
+                <% attr = { prompt: "Select Group" } %>
+                <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
+                <%= f.collection_select :group_id, Group.all, :id, :name, attr,  class: "form-control" %>
               </div>
               <div class="col-md-3">
                 <a href="#" id="add-group-btn" class="btn btn-default btn-block">Add Group</a>
