@@ -20,9 +20,9 @@
       <%= link_to edit_contact_path(contact), class: "btn btn-circle btn-default btn-xs", title: 'Edit' do %>
          <i class="glyphicon glyphicon-edit"></i>
       <% end %>
-      <a href="#" class="btn btn-circle btn-danger btn-xs" title="Edit">
-        <i class="glyphicon glyphicon-remove"></i>
-      </a>
+      <%= link_to destroy_contact_path(contact), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: 'Remove', data: { confirm: "Are you sure?" } do %>
+         <i class="glyphicon glyphicon-remove"></i>
+      <% end %>
     </div>
   </td>
 </tr>
