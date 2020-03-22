@@ -1,4 +1,4 @@
-<%= form_for(@contact, url: @contact.new_record? ? create_contact_path : update_contact_path(@contact)) do |f| %>
+<%= form_for(@contact, url: @contact.new_record? ? create_contact_path : update_contact_path(@contact), html: { multipart: true }) do |f| %>
 
     <div class="panel-body">
 
@@ -86,7 +86,7 @@
               </div>
               <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
               <div class="text-center">
-                <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
                 <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
               </div>
             </div>
