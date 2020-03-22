@@ -4,7 +4,7 @@ class Contact < ApplicationRecord
   paginates_per 5
   
   validates :name, :email, :group_id, presence: true
-  validates :name, lenghth: { minimum: 2 }
+  validates :name, length: { minimum: 2 }
 
   def gravatar
     hash = Digest::MD5.hexdigest(email.downcase)

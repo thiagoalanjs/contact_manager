@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
         #@contacts = Contact.where(group_id: params[:group_id]).page(params[:page])
        @contacts = Group.find(params[:group_id]).contacts.page(params[:page])   
     else
-       @contacts = Contact.page(params[:page])
+       @contacts = Contact.order(created_at: :desc).page(params[:page])
     end
   end
 
@@ -21,6 +21,10 @@ class ContactsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+      @contact = Contact.find(params[:id])
   end
 
   private
