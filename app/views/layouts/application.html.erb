@@ -17,16 +17,7 @@
     <!-- content -->
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
-         <%= render 'layouts/sidebar'%>
-        </div><!-- /.col-md-3 -->
-
-        <div class="col-md-9">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <%= render 'layouts/messages' if !flash.empty? %>
-          <%= yield%>
-        </div>
+        <%= yield %>
       </div>
     </div>
   </body>
