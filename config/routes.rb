@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # get 'contacts/index', as: 'contacts'
   # get 'contacts/new', as: 'new_contact'
   # post 'contacts/create', as: 'create_contact'
